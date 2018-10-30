@@ -27,7 +27,8 @@ public class MyApplication extends Application {
         mCityDB=openCityDB();
         initCityList();
     }
-    private void initCityList() {
+
+    private void initCityList() {//初始化城市列表
         mCityList = new ArrayList<City>();
         new Thread(new Runnable() {
             @Override
@@ -49,14 +50,13 @@ public class MyApplication extends Application {
         return true;
     }
     public static MyApplication getInstance(){
-
         return mApplication;
     }
     public List<City> getCityList(){
         return mCityList;
     }
-    private CityDB openCityDB() {
-        String path = "/data"
+    private CityDB openCityDB() {//打开数据库，
+        String path = "/data"//data目录下找
                 + Environment.getDataDirectory().getAbsolutePath ()
                 + File.separator + getPackageName()
                 + File.separator + "databases1"
@@ -64,7 +64,7 @@ public class MyApplication extends Application {
                 + CityDB.CITY_DB_NAME;
         File db = new File(path);
         Log.d(TAG,path);
-        if (!db.exists()) {
+        if (!db.exists()) {//如果数据库不存在
             String pathfolder = "/data"
                 + Environment.getDataDirectory().getAbsolutePath()
                     + File.separator + getPackageName()
@@ -76,7 +76,7 @@ public class MyApplication extends Application {
                 Log.i("MyApp","mkdirs");
             }
             Log.i("MyApp","db is not exists");
-            try {
+            try {//读入数据库数据
                 InputStream is = getAssets().open("city.db");
                 FileOutputStream fos = new FileOutputStream(db);
                 int len = -1;

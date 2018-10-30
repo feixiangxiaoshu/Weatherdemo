@@ -9,7 +9,7 @@ import com.example.admin.bean.City;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CityDB {
+public class CityDB {// city数据库操作,
     public static final String CITY_DB_NAME = "city.db";
     private static final String CITY_TABLE_NAME = "city";
     private SQLiteDatabase db;
@@ -25,7 +25,7 @@ public class CityDB {
             String allPY = c.getString(c.getColumnIndex("allpy") );
             String allFirstPY = c.getString(c.getColumnIndex("allfirstpy"));
             String firstPY = c.getString(c.getColumnIndex("firstpy"));
-            City item = new City(province, city, number, firstPY , allPY,allFirstPY);
+            City item = new City(province, city, number, firstPY, allPY,allFirstPY);
             list.add(item);
         }
         return list;
