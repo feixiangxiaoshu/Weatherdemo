@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <RelativeLayout
@@ -30,21 +31,36 @@
             android:layout_toRightOf="@id/title_back"
             android:background="#A71717"
             android:gravity="center" />
+
     </RelativeLayout>
+
     <LinearLayout
+        android:orientation="vertical"
         android:layout_below="@id/title_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <EditText
-            android:id="@+id/search_city"
+            android:id="@+id/searchcity"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="40dp"
+            android:layout_below="@id/title_top"
+            android:layout_margin="10.0dp"
+
+            android:drawableLeft="@drawable/magnifying_glass"
+            android:drawablePadding="8.0dp"
+            android:hint="搜索全国城市"
+            android:maxLines="1"
+            android:paddingLeft="10.0dp"
+            android:paddingTop="8.0dp"
+            android:paddingRight="30.0dp"
+            android:textColor="#ffcccccc"
+            android:textColorHint="#ffcccccc"
+            android:textSize="15.0sp" />
         <ListView
             android:id="@+id/title_list"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
         </ListView>
 
     </LinearLayout>

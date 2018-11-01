@@ -192,12 +192,23 @@
                     android:text="今天 星期三"
                     android:textColor="@android:color/white"
                     android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/wendu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/week_today"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@id/weather_img"
+                    android:singleLine="true"
+                    android:text="当前温度："
+                    android:textColor="@android:color/white"
+                    android:textSize="20.0sp" />
                 <!-- 温度范围 -->
                 <TextView
                     android:id="@+id/temperature"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/week_today"
+                    android:layout_below="@id/wendu"
                     android:layout_marginLeft="5dip"
                     android:layout_toRightOf="@id/weather_img"
                     android:singleLine="true"
