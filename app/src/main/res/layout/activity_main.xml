@@ -167,6 +167,7 @@
             </LinearLayout>
             <!-- 今日天气信息块 -->
             <RelativeLayout
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/humidity"
@@ -242,6 +243,19 @@
             </RelativeLayout>
         </RelativeLayout>
         <!-- 六日天气信息 -->
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/sixDay_weather"
+            android:padding="10.0dip">
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+            </android.support.v4.view.ViewPager>
+
+        </RelativeLayout>
         <!-- 广告等信息 -->
     </LinearLayout>
 
