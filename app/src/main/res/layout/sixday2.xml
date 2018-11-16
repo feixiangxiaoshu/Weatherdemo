@@ -68,7 +68,7 @@
                 android:textColor="@android:color/white"
                 android:textSize="20.0sp" />
         </RelativeLayout>
-        <RelativeLayout
+        <!--<RelativeLayout
             android:id="@+id/indicator1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -184,6 +184,6 @@
                 android:text="微风"
                 android:textColor="@android:color/white"
                 android:textSize="20.0sp" />
-        </RelativeLayout>
+        </RelativeLayout>-->
     </RelativeLayout>
 </RelativeLayout>

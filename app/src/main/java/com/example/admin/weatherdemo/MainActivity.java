@@ -83,7 +83,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mCitySelect.setOnClickListener(this);//监听选择城市按钮
         initViews();
 
-
         initView();
 
 
@@ -258,7 +257,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 eventType = xmlPullParser.next();
                                 todayWeather.setDate(xmlPullParser.getText());
                                 dateCount++;
-                            } else if (xmlPullParser.getName().equals("high") && highCount == 0) {
+                            }else if (xmlPullParser.getName().equals("date") && dateCount == 1) {
+                                eventType = xmlPullParser.next();
+                                todayWeather.setWeek_today(xmlPullParser.getText());
+                                dateCount++;
+                            }else if (xmlPullParser.getName().equals("date") && dateCount == 2) {
+                                eventType = xmlPullParser.next();
+                                todayWeather.setWeek_today1(xmlPullParser.getText());
+                                dateCount++;
+                            }else if (xmlPullParser.getName().equals("date") && dateCount == 3) {
+                                eventType = xmlPullParser.next();
+                                todayWeather.setWeek_today2(xmlPullParser.getText());
+                                dateCount++;
+                            }else if (xmlPullParser.getName().equals("date") && dateCount == 4) {
+                                eventType = xmlPullParser.next();
+                                todayWeather.setWeek_today3(xmlPullParser.getText());
+                                dateCount++;
+                            }else if (xmlPullParser.getName().equals("date") && dateCount == 5) {
+                                eventType = xmlPullParser.next();
+                                todayWeather.setWeek_today4(xmlPullParser.getText());
+                                dateCount++;
+                            }else if (xmlPullParser.getName().equals("date") && dateCount == 6) {
+                                eventType = xmlPullParser.next();
+                                todayWeather.setWeek_today5(xmlPullParser.getText());
+                                dateCount++;
+                            }
+                            else if (xmlPullParser.getName().equals("high") && highCount == 0) {
                                 eventType = xmlPullParser.next();
                                 todayWeather.setHigh(xmlPullParser.getText().substring(2).trim());
                                 highCount++;
@@ -397,20 +421,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         climate2 = views.get(0).findViewById(R.id.climate2);
         wind2 = views.get(0).findViewById(R.id.wind2);
 
-        week_today3 = views.get(0).findViewById(R.id.week_today3);
-        temperature3 = views.get(0).findViewById(R.id.temperature);
-        climate3 = views.get(0).findViewById(R.id.climate3);
-        wind3 = views.get(0).findViewById(R.id.wind3);
+        week_today3 = views.get(1).findViewById(R.id.week_today3);
+        temperature3 = views.get(1).findViewById(R.id.temperature3);
+        climate3 = views.get(1).findViewById(R.id.climate3);
+        wind3 = views.get(1).findViewById(R.id.wind3);
 
-        week_today4 = views.get(0).findViewById(R.id.week_today4);
-        temperature4 = views.get(0).findViewById(R.id.temperature4);
-        climate4 = views.get(0).findViewById(R.id.climate4);
-        wind4 = views.get(0).findViewById(R.id.wind4);
+        /*week_today4 = views.get(1).findViewById(R.id.week_today4);
+        temperature4 = views.get(1).findViewById(R.id.temperature4);
+        climate4 = views.get(1).findViewById(R.id.climate4);
+        wind4 = views.get(1).findViewById(R.id.wind4);
 
-        week_today5 = views.get(0).findViewById(R.id.week_today5);
-        temperature5 = views.get(0).findViewById(R.id.temperature5);
-        climate5 = views.get(0).findViewById(R.id.climate5);
-        wind5= views.get(0).findViewById(R.id.wind5);
+        week_today5 = views.get(1).findViewById(R.id.week_today5);
+        temperature5 = views.get(1).findViewById(R.id.temperature5);
+        climate5 = views.get(1).findViewById(R.id.climate5);
+        wind5= views.get(1).findViewById(R.id.wind5);*/
 
 
         city_name_Tv.setText("N/A");
@@ -424,6 +448,39 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         climateTv.setText("N/A");
         windTv.setText("N/A");
 
+        week_today.setText("N/A");
+        temperature.setText("N/A");
+        climate.setText("N/A");
+        wind.setText("N/A");
+
+        week_today1.setText("N/A");
+        temperature1.setText("N/A");
+        climate1.setText("N/A");
+        wind1.setText("N/A");
+
+        week_today2.setText("N/A");
+        temperature2.setText("N/A");
+        climate2.setText("N/A");
+        wind2.setText("N/A");
+
+        week_today3.setText("N/A");
+        temperature3.setText("N/A");
+        climate3.setText("N/A");
+        wind3.setText("N/A");
+
+        /*week_today4.setText("N/A");
+        temperature4.setText("N/A");
+        climate4.setText("N/A");
+        wind4.setText("N/A");
+
+        week_today5.setText("N/A");
+        temperature5.setText("N/A");
+        climate5.setText("N/A");
+        wind5.setText("N/A");*/
+
+
+
+
 
     }
 
@@ -435,7 +492,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         pmDataTv.setText(todayWeather.getPm25());
         pmQualityTv.setText(todayWeather.getQuality());
         weekTv.setText(todayWeather.getDate());
-        temperatureTv.setText(todayWeather.getHigh() + "~" + todayWeather.getLow());
+        temperatureTv.setText(todayWeather.getLow() + "~" + todayWeather.getHigh());
         climateTv.setText(todayWeather.getType());
         windTv.setText("风力:" + todayWeather.getFengli());
 
@@ -460,7 +517,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         climate3.setText(todayWeather.getClimate3());
         wind3.setText(todayWeather.getWind3());
 
-        week_today4.setText(todayWeather.getWeek_today4());
+       /*week_today4.setText(todayWeather.getWeek_today4());
         temperature4.setText(todayWeather.getTemperatureL4()+"~"+todayWeather.getTemperatureH4());
         climate4.setText(todayWeather.getClimate4());
         wind4.setText(todayWeather.getWind4());
@@ -468,7 +525,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         week_today5.setText(todayWeather.getWeek_today5());
         temperature5.setText(todayWeather.getTemperatureL5()+"~"+todayWeather.getTemperatureH5());
         climate5.setText(todayWeather.getClimate5());
-        wind5.setText(todayWeather.getWind5());
+        wind5.setText(todayWeather.getWind5());*/
+
+
 
 
         Toast.makeText(MainActivity.this, "更新成功！", Toast.LENGTH_SHORT).show();
