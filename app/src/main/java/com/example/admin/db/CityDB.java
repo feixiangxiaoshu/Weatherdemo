@@ -30,4 +30,9 @@ public class CityDB {// city数据库操作,
         }
         return list;
     }
+    public String getCityNumber(String cityName){
+        String city=cityName;
+        Cursor c=db.query("city",new String[]{"number"},"city =?",new String[] {city},null,null,null);
+        return c.getString(c.getColumnIndex("number"));
+    }
 }

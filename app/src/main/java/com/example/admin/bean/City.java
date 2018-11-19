@@ -41,4 +41,8 @@ public class City {//建立City类，进行相关默认构造方法
     public String getAllFristPY() {
         return allFristPY;
     }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
 }
